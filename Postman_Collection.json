@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "User CRUD API",
+    "description": "Test all 4 API endpoints: GET, POST, PUT, DELETE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET All Users",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{BASE_URL}}/users",
+          "host": ["{{BASE_URL}}"],
+          "path": ["users"]
+        },
+        "description": "Fetch all users from the database"
+      },
+      "response": []
+    },
+    {
+      "name": "2. POST Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\"\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/users",
+          "host": ["{{BASE_URL}}"],
+          "path": ["users"]
+        },
+        "description": "Create a new user with name and email"
+      },
+      "response": []
+    },
+    {
+      "name": "3. PUT Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\"\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/users/1",
+          "host": ["{{BASE_URL}}"],
+          "path": ["users", "1"]
+        },
+        "description": "Update an existing user by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "4. DELETE User",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{BASE_URL}}/users/1",
+          "host": ["{{BASE_URL}}"],
+          "path": ["users", "1"]
+        },
+        "description": "Delete a user by ID"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:3001",
+      "type": "string"
+    }
+  ]
+}
