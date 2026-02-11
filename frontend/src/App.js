@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "https://a1a1-44-192-25-247.ngrok-free.app/users";
+const API_URL = "https://1a76-44-192-25-247.ngrok-free.app/users";
 
 function App() {
   const [users, setUsers] = useState([]);
